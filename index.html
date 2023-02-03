@@ -1,1 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Draggable Todo App</title>
+  </head>
+  <body>
+    <!--Description modal-->
+    <div class="modal" id="Description">
+      <div class="header">
+        <div class="title">Description</div>
+        <button class="btn close-modal">&times;</button>
+      </div>
+      <div class="body">
+       <p id="message"></p>
+      
+        <input type="text" id="update_description">
 
+        <input type="submit" value="update" id="submit_update" />
+      </div>
+    </div>
+
+    <!-- modal -->
+    <div class="modal" id="todo_form">
+      <div class="header">
+        <div class="title">Add Todo</div>
+        <button class="btn close-modal">&times;</button>
+      </div>
+      <div class="body">
+        <label for="todo_input">Title</label>
+        <input type="text" id="todo_input" />
+        <label for="todo_description">Description</label>
+        <input type="text" id="todo_description">
+
+        <input type="submit" value="Add Todo" id="todo_submit" />
+      </div>
+    </div>
+    <!-- todo -->
+    <div class="todo-container">
+      <div class="status" id="no_status">
+        <h1>No Status</h1>
+        <button id="add_btn" data-target-modal="#todo_form">+ Add Todo</button>
+        <div class="todo" draggable="true">
+         <div data-target="#Description" id="item" class="cls_des"><span>Make Breakfast</span>
+          <p id="userInput" class="nitish"></p>
+         </div> 
+        
+          <span class="close">&times;</span>
+        </div>
+      </div>
+      <div class="status">
+        <h1>Not Started</h1>
+      </div>
+      <div class="status">
+        <h1>In Progress</h1>
+      </div>
+      <div class="status">
+        <h1>Completed</h1>
+      </div>
+    </div>
+
+    <div id="overlay"></div>
+
+    <script src="code.js"></script>
+  </body>
+</html>
