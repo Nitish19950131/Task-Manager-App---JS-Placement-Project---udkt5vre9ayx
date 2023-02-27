@@ -3,10 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="styles.css" />
-    <title>Draggable Todo App</title>
+    <link rel="stylesheet" href="style.css" />
+    
+
+    <title>Task Manager</title>
   </head>
-  <body>
+  <body class="">
     <!--Description modal-->
     <div class="modal" id="Description">
       <div class="header">
@@ -14,18 +16,20 @@
         <button class="btn close-modal">&times;</button>
       </div>
       <div class="body">
-       <p id="message"></p>
-      
+       <!--<p id="message"></p>-->
+       <label for="update_task">Task</label>
+        <input type="text" id="update_task">
+        <label for="update_description">Description</label>
         <input type="text" id="update_description">
 
-        <input type="submit" value="update" id="submit_update" />
+        <input type="submit" value="Update" id="submit_update"/>
       </div>
     </div>
 
     <!-- modal -->
     <div class="modal" id="todo_form">
       <div class="header">
-        <div class="title">Add Todo</div>
+        <div class="title">Add Task</div>
         <button class="btn close-modal">&times;</button>
       </div>
       <div class="body">
@@ -34,17 +38,17 @@
         <label for="todo_description">Description</label>
         <input type="text" id="todo_description">
 
-        <input type="submit" value="Add Todo" id="todo_submit" />
+        <input type="submit" value="Add Task" id="todo_submit" />
       </div>
     </div>
     <!-- todo -->
     <div class="todo-container">
       <div class="status" id="no_status">
         <h1>No Status</h1>
-        <button id="add_btn" data-target-modal="#todo_form">+ Add Todo</button>
-        <div class="todo" draggable="true">
-         <div data-target="#Description" id="item" class="cls_des"><span>Make Breakfast</span>
-          <p id="userInput" class="nitish"></p>
+        <button id="add_btn" data-target-modal="#todo_form">+ Add Task</button>
+        <div class="todo hide" draggable="true">
+         <div data-target="#Description" id="item" class="cls_des"><span id=100>Example</span>
+          <p id=0 class="nitish"></p>
          </div> 
         
           <span class="close">&times;</span>
@@ -63,6 +67,7 @@
 
     <div id="overlay"></div>
 
-    <script src="App.js"></script>
+    <script src="code.js"></script>
+    
   </body>
 </html>
